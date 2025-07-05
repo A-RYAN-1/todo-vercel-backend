@@ -15,6 +15,10 @@ app.use(express.json());
 
 // ROUTES
 
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running");
+});
+
 // Create a todo
 app.post("/todos", async (req, res) => {
   const { description, due_date, priority } = req.body;

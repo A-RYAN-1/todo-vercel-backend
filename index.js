@@ -4,7 +4,14 @@ const cors = require("cors");
 const pool = require("./connect_server_and_database");
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://todo-vercel-frontend.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // ROUTES
